@@ -1,0 +1,13 @@
+.Nav{
+    padding: 1em;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 1em;
+
+}
+
+
+.imagen{
+    width: 40%;
+}

@@ -1,0 +1,99 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient( #ac5504, #fffb92) ;
+    width: auto;
+    border: 1px solid grey;
+    border-radius: 5px;
+    padding: 20px;
+    cursor: pointer;
+    -moz-osx-font-smoothing: grayscale;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+    box-shadow: 0 8px 16px 0 rgb(180, 100, 9);
+   
+}
+
+.container:hover{
+    transform: scale(1.02);
+}
+
+.atributes{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    font-size:medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.CloseButton{
+   opacity: 0.7;
+   position:absolute;
+   top: 5px;
+   right: 5px;
+}
+
+.CloseButton:hover{
+    background-color:  rgb(167, 33, 33);
+    color: white;
+
+}
+
+.status{
+    position: absolute;
+    width: 100%;
+    top: 5%;
+    left: 5%;
+    opacity: 1;
+    border-radius: 10px;
+    background-color: green;
+    margin-bottom: 1em;
+    width: fit-content;
+    padding: 5px;
+    font-weight: bold;
+    
+}
+
+
+.imageContainer{
+    position: relative;
+    text-align: center;
+    display: inline-block;
+    background-image: url(https://png.pngitem.com/pimgs/s/519-5195253_kingsglass-green-portal-title-kingsglass-green-rick-and.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.name{
+    position: absolute;
+    width: 100%;
+    top: 40%;
+    left: 50%;
+    opacity: 0;
+    transform: translate(-50%,-50%);
+    -webkit-transition: all 0.3s, ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    
+}
+
+.imageContainer:hover .name{
+opacity: 1;
+
+}
+
+.image{
+    display: block;
+    width: 100%;
+    height: auto;
+    -webkit-transition: all 0.3s, ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.imageContainer:hover .image{
+opacity: 0.4;
+}

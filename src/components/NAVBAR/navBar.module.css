@@ -1,0 +1,10 @@
+.navBar{
+display:flex;
+margin-bottom: 25px;
+flex-direction: row;
+justify-content: space-between;
+width: 90%;
+border-top: solid #0a61a3 2px;
+border-bottom:solid #0a61a3 2px ;
+padding: 5px 0px;
+}

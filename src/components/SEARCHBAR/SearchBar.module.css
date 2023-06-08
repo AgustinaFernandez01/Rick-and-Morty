@@ -1,0 +1,27 @@
+.bar{
+margin-top: 30px;
+height: 30px;
+width: 70%;
+display: flex;
+margin-bottom: 25px;
+
+}
+
+.searchInput{ 
+   width: 40%;
+   padding: 12px 20px;
+   border: solid   #5effa0 2px;
+   border-radius: 7px 0px 0px 7px ;
+   box-sizing: border-box;
+   box-shadow: inset 0 0 5px #808080;
+}
+
+
+.ButtonSearch{
+ width: fit-content;
+ height: 30px;
+ fill:  #5effa0;
+ box-shadow: inset 0 0 5px #808080;
+ border: solid  #5effa0 2px;
+ border-radius: 0px 7px 7px 0px ;
+}
