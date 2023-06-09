@@ -2,19 +2,24 @@
 display: flex;
 justify-content: space-around;
 width: 60%;
-border: solid 1px black;
+border: solid 1px grey;
 margin:  0 auto;
 max-height: 400px;
 padding: 15px;
-border-radius:5px;
+border-radius:10px;
 color:black;
-background-color: beige;
+background-image: linear-gradient( #ac5504, #fffb92) ;
 }
 
 .details div{
+background-image: linear-gradient( #fffb92,#ac5504) ;
 display: flex;
 align-items: center;
 justify-content: left;
+padding: 2px;
+padding-left: 5px;
+padding-right: 5px;
+border-radius: 5px;
 }
 
 .details{
@@ -22,9 +27,12 @@ display: flex;
 flex-direction: column;
 flex-wrap: wrap;
 justify-content: space-around;
+font-weight: bold;
 }
 
-.details p{
-    margin-left: 30px;
+
+.imageContainer{
+    border-radius: 5px;
+    left:50px;
 }
 

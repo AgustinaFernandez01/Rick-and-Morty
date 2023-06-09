@@ -1,18 +1,22 @@
 import SearchBar from '../SEARCHBAR/SearchBar'
 import style from './navBar.module.css'
-import {Link} from 'react-router-dom'
+import {NavLink} from 'react-router-dom'
 
 
-export default function NavBar ({onSearch}){
+export default function NavBar ({onSearch, random}){
     return (
         <div className={style.navBar}>
             <div>
-                <Link to='/about'>About</Link>
+                <NavLink to='/about' className={style.aboutBtn}>About</NavLink>
             </div>
             <div>
-                <Link to='/home'>Home</Link>
+                <NavLink to='/home' className={style.homeBtn}>Home</NavLink>
+            </div>
+            <div>
+                <NavLink to='/favourites' className={style.favouritesBtn}>Favourites</NavLink>
             </div>
             <SearchBar onSearch={onSearch}/>
+            <button className={style.random} onClick={random}>ADD RANDOM</button>
         </div>
     )
 }
