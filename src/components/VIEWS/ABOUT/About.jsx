@@ -3,8 +3,8 @@ import style from './About.module.css'
 function About(){
     return(
         <div className={style.about}>
-            <h1>ESTA PAGINA FUE CREADA POR AGUS</h1>
-            <h4>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA</h4>
+            <h1>Esta página fue creada por Agustina Fernández</h1>
+            <h4>Este es el proyecto integrador del modulo 2 de la carrera de Full Stack Developer en HENRY</h4>
         </div>
     )
 }

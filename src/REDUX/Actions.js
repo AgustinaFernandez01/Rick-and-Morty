@@ -1,13 +1,11 @@
-export const ADD_FAVOURITE = 'ADD_FAVOURITE';
-export const REMOVE_FAVOURITE = 'REMOVE_FAVOURITE';
+import {ADD_FAV, REMOVE_FAV} from './Action-types'
 
-
-export const addFavourite =  (character) =>{
-    return{type:ADD_FAVOURITE, payload:character}
+export const addFav =  (character) => {
+    return{ type: ADD_FAV, payload: character}
 }
 
 
-export const removeFavourite = (id) =>{
-    return{type:REMOVE_FAVOURITE, payload:id}
+export const removeFav = (id) => {
+    return{ type:REMOVE_FAV, payload: id}
 }
 

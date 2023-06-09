@@ -1,27 +1,24 @@
-import {ADD_FAVOURITE} from './Actions'
-import { REMOVE_FAVOURITE } from './Actions';
-
-
+import {ADD_FAV, REMOVE_FAV} from './Action-types'
 
 
 const initialState ={
-    myFavourites: [],
+    myFavorites: []
 };
+//                                  destructuring de action
+const reducer = (state = initialState, {type, payload}) =>{ 
+    switch(type){
 
-const rootReducer = (state = initialState, action) =>{ 
-    switch(action.type){
-
-        case ADD_FAVOURITE:
+        case ADD_FAV:
             return{
                 ...state,
-                myFavourites:[state.myFavourites, action.payload],
+                myFavorites:[state.myFavorites, payload],
             };
         
-        case REMOVE_FAVOURITE:
+        case REMOVE_FAV:
             return{
                 ...state,
-                myFavourites: state.myFavourites.filter(
-                    (char) => char.id !== action.payload
+                myFavorites: state.myFavorites.filter(
+                    (fav) => fav.id !== payload
               ),
             }
 
@@ -29,4 +26,4 @@ const rootReducer = (state = initialState, action) =>{
             return {...state};
     }
 };
-export default rootReducer;
+export default reducer;

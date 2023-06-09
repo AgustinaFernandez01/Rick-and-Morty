@@ -9,7 +9,7 @@ import Detail from './components/VIEWS/DETAIL/Detail';
 import About from './components/VIEWS/ABOUT/About'
 import ErrorPage from './components/VIEWS/ERROR/errorPage';
 import LandingPage from './components/VIEWS/LANDING/LandingPage';
-import FavsPage from './components/VIEWS/FAVS/FavsPage';
+import Favorites from './components/FAVORITES/Favorites'
 
 
    
@@ -31,7 +31,7 @@ function App() {
 
    useEffect(() => {
       !access && navigate('/');
-   }, [access]); 
+   }, [access, navigate]); 
    
    function searchHandler(id){
       axios(`https://rickandmortyapi.com/api/character/${id}`).then(({ data }) => {
@@ -80,7 +80,7 @@ function App() {
             <Route path='/home' element={ <Cards characters={characters} onClose={onClose} />}/> 
             <Route path='/detail/:id' element={<Detail/>}/>
             <Route path='/about' element={<About/>}/>
-            <Route path='/favourites' element={<FavsPage/>}/>
+            <Route path='/favorites' element={<Favorites/>}/>
             <Route path='*' element={<ErrorPage/>}/> 
          </Routes>
       </div>

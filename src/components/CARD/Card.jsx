@@ -1,31 +1,31 @@
 import {Link} from 'react-router-dom';
 import style from './Card.module.css'
 import { connect } from 'react-redux';
-import { addFavourite, removeFavourite } from '../../REDUX/Actions';
+import { addFav, removeFav } from '../../REDUX/Actions';
 import { useState, useEffect} from 'react';
 
 
-function Card({id,name,status,gender,species,origin,image, onClose, addFavourite,removeFavourite, myFavourites}) {  
+function Card({id,name,status,gender,species,origin,image, onClose, addFav,removeFav, myFavorites}) {  
    
-   const [isFav, setIsFav] = useState(false)
+   const [isFav, setIsFav] = useState(false);
 
-   const handleFavourite = () =>{
+   const handleFavorite = () =>{
       if(isFav){
          setIsFav(false);
-         removeFavourite(id)
+         removeFav(id);
       } else{
          setIsFav(true);
-         addFavourite({id,name,status,gender,species,origin,image, addFavourite,removeFavourite} )
+         addFav({id,name,status,gender,species,origin,image, onClose} )
       }
    }
 
    useEffect(() => {
-      myFavourites.forEach((fav) => {
+      myFavorites.forEach((fav) => {
          if(fav.id === id){
             setIsFav(true);
          }
       });
-   }, [myFavourites]);
+   }, [myFavorites, id]);
 
    return (
       <div className={style.container} >
@@ -39,9 +39,9 @@ function Card({id,name,status,gender,species,origin,image, onClose, addFavourite
          </div>
           {
          isFav ? (
-         <button   onClick={handleFavourite}>❤️</button>
+         <button onClick={handleFavorite} >❤️</button>
          ) : (
-         <button   onClick={handleFavourite}>🤍</button>
+         <button onClick={handleFavorite} >🤍</button>
          )
          }
          <div className={style.atributes}> 
@@ -54,14 +54,14 @@ function Card({id,name,status,gender,species,origin,image, onClose, addFavourite
 
 const mapDispatchToProps = (dispatch) =>{
    return{
-      addFavourite: (character)=>{dispatch(addFavourite(character))},
-      removeFavourite: (id)=>{dispatch(removeFavourite(id))}
+      addFav: (character)=>{dispatch(addFav(character))},
+      removeFav: (id)=>{dispatch(removeFav(id))}
    }
  }
 
  const mapStateToProps = (state) =>{
    return {
-      myFavourites: state.myFavourites
+      myFavorites: state.myFavorites
    }
  }
 
