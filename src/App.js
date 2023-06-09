@@ -19,7 +19,7 @@ function App() {
 
    const navigate = useNavigate()
    const [access, setAccess] = useState(false);
-   const EMAIL = 'agustinafer29@gmail.com';
+   const EMAIL = 'agustina123@gmail.com';
    const PASSWORD = 'agus123';
 
    function login(userData){
