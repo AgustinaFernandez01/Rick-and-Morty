@@ -34,14 +34,17 @@ function App() {
    }, [access, navigate]); 
    
    function searchHandler(id){
-      axios(`http://localhost:3001/rickandmorty/character/${id}`).then(({ data }) => {
+      axios(`http://localhost:3001/rickandmorty/character/${id}`)
+      .then(({ data }) => {
          if (data.name && !characters.find(char => char.id === data.id)) {
-            setCharacters((oldChars) => [...oldChars, data]);
-         } else {
-            window.alert('¡No hay personajes con este ID!');
+            setCharacters((oldChars) => [...oldChars, data])
          }
-      });
-   }
+      })
+      .catch((error)=>{
+         console.error('error:', error)
+      })
+   } 
+   
 
  
    function onClose(id){
