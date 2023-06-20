@@ -19,16 +19,26 @@ function App() {
 
    const navigate = useNavigate()
    const [access, setAccess] = useState(false);
-   const EMAIL = 'agustina123@gmail.com';
-   const PASSWORD = 'agus123';
+   // const EMAIL = 'agustina123@gmail.com';
+   // const PASSWORD = 'agus123';
 
-   function login(userData){
-      if (userData.password === PASSWORD && userData.email === EMAIL){
-         setAccess(true);
-         navigate('/home')
-      }
+   // function login(userData){
+   //    if (userData.password === PASSWORD && userData.email === EMAIL){
+   //       setAccess(true);
+   //       navigate('/home')
+   //    }
+   // }
+
+   function login(userData) {
+      const { email, password } = userData;
+      const URL = 'http://localhost:3001/rickandmorty/login/';
+      axios(URL + `?email=${email}&password=${password}`).then(({ data }) => {
+         const { access } = data;
+         setAccess(data);
+         access && navigate('/home');
+      });
    }
-
+   
    useEffect(() => {
       !access && navigate('/');
    }, [access, navigate]); 
@@ -79,7 +89,7 @@ function App() {
       {location.pathname !== '/' && <img className={style.imagen} src='https://es.clippingmagic.com/images/158047225/public/downloadPreview/3ce9d5ddecf55604193673581065111bc1de0a68/descarga%20(5)_preview_rev_1.png' alt='logo'/>} 
       {location.pathname !== '/' && (<NavBar onSearch={searchHandler} random={randomHandler}></NavBar>)} 
          <Routes>
-            <Route path='/' element={<LandingPage login={login}/>}/>
+            <Route path='/' element={<LandingPage login = {login}/>}/>
             <Route path='/home' element={ <Cards characters={characters} onClose={onClose} />}/> 
             <Route path='/detail/:id' element={<Detail/>}/>
             <Route path='/about' element={<About/>}/>
