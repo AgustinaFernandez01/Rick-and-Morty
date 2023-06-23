@@ -29,7 +29,7 @@ const PORT = 3001;
 const router = require('./ROUTES/index')
 
 server.listen(PORT, () =>{
-  console.log(`server raised in port: ${PORT}`)
+  console.log(`Server raised in port: ${PORT}`)
 })
 
 server.use((req, res, next) => {

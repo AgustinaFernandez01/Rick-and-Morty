@@ -29,7 +29,7 @@ const reducer = (state = initialState, {type, payload}) =>{
         //       ),
         //     }
 
-        case 'REMOVE_FAV':
+        case REMOVE_FAV:
          return { ...state, 
                   myFavorites: payload };
 
